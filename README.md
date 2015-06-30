@@ -5,7 +5,7 @@ stylecow plugin webkit-gradient
 
 Stylecow plugin to generate the css fallback code with the old webkit syntax for css gradients. 
 
-Note: this plugin does not add vendor prefixes to the new syntax, use [stylecow-plugin-prefixes](https://github.com/stylecow/stylecow-plugin-prefixes) to that.
+Note: this plugin does not add vendor prefixes to the new syntax, use [stylecow-plugin-prefixes](https://github.com/stylecow/stylecow-plugin-prefixes) to do that.
 
 You write:
 
