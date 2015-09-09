@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = function (stylecow) {
 
 	// adds the old syntax -webkit-gradient
@@ -7,9 +9,7 @@ module.exports = function (stylecow) {
 			safari: 5.1,
 			android: 4.0
 		},
-		filter: {
-			type: 'Declaration'
-		},
+		filter: 'Declaration',
 		fn: function (declaration) {
 			if (declaration.has({
 				type: 'Function',
@@ -18,11 +18,11 @@ module.exports = function (stylecow) {
 			})) {
 				declaration
 					.cloneBefore()
-					.getAll({
+					.walk({
 						type: 'Function',
 						name: 'linear-gradient'
-					})
-					.forEach(function (fn) {
+					},
+					function (fn) {
 						var args = fn.toArray();
 						var newArgs = ['linear'];
 
@@ -80,7 +80,7 @@ module.exports = function (stylecow) {
 						});
 
 						//Apply the changes
-						fn.replaceWith(stylecow.parse('-webkit-gradient(' + newArgs.join(',') + ')', 'Function'));
+						fn.replaceWithCode('-webkit-gradient(' + newArgs.join(',') + ')', 'Function');
 					});
 			}
 		}
