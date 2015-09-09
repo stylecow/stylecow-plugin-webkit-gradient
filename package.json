@@ -2,6 +2,9 @@
   "name": "stylecow-plugin-webkit-gradient",
   "description": "Stylecow plugin to generate the css fallback code with the old webkit syntax for css gradients",
   "version": "2.0.0",
+  "engines": {
+    "node": ">=4.0"
+  },
   "author": "Oscar Otero <oom@oscarotero.com>",
   "homepage": "https://github.com/stylecow/stylecow-plugin-webkit-gradient",
   "bugs": "https://github.com/stylecow/stylecow-plugin-webkit-gradient/issues",
