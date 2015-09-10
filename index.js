@@ -18,11 +18,11 @@ module.exports = function (tasks) {
             })) {
                 declaration
                     .cloneBefore()
-                    .walk({
+                    .getAll({
                         type: 'Function',
                         name: 'linear-gradient'
-                    },
-                    function (fn) {
+                    })
+                    .forEach(function (fn) {
                         var args = fn.toArray();
                         var newArgs = ['linear'];
 
